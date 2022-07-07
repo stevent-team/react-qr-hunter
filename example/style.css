@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+}
+
+#app {
+  position: relative;
+  width: 600px;
+  max-width: 90%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 1em;
+  margin: auto;
+}
+
+video {
+  display: block;
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.scan-region-highlight {
+  border-radius: 1em;
+  box-shadow: 0 0 0 1e3vh rgba(0 0 0 / .3);
+}
+
+.scan-region-highlight-svg {
+  display: none;
+}
+
+.code-outline-highlight polygon {
+  stroke-dasharray: 0;
+  stroke: mediumspringgreen;
+  fill: hsl(160 100% 50% / .2)
+}

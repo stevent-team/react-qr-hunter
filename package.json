@@ -1,0 +1,52 @@
+{
+  "name": "@stevent-team/react-qr-hunter",
+  "version": "0.0.1",
+  "description": "A QR code scanner for React",
+  "keywords": [
+    "qr",
+    "scanner",
+    "reader",
+    "react",
+    "webworker",
+    "BarcodeDetector"
+  ],
+  "repository": "https://github.com/stevent-team/react-qr-hunter",
+  "author": "Stevent team (https://stevent.club)",
+  "license": "MIT",
+  "library": "dist/index.js",
+  "example": "dist-example/index.html",
+  "targets": {
+    "library": {
+      "source": "src/index.js",
+      "context": "browser",
+      "outputFormat": "commonjs",
+      "isLibrary": true,
+      "includeNodeModules": {
+        "react": false
+      }
+    },
+    "example": {
+      "source": "example/index.html"
+    }
+  },
+  "scripts": {
+    "build": "parcel build --target library",
+    "dev": "parcel --target example",
+    "example": "parcel build --target example"
+  },
+  "dependencies": {
+    "qr-scanner": "^1.4.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
