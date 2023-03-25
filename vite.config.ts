@@ -8,10 +8,10 @@ const useHttps = process.argv.some(s => s === '--https')
 
 export default defineConfig(({ mode }) => ({
   plugins: [
+    react(),
     dts({
       insertTypesEntry: true,
     }),
-    react(),
     ...(useHttps ? [mkcert()] : []),
   ],
   resolve: {
@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     ...mode !== 'demo' && { lib: {
-      entry: resolve(__dirname, 'lib/index.ts'),
+      entry: resolve(__dirname, 'lib/index.tsx'),
       name: 'reactQrHunter',
       fileName: 'react-qr-hunter',
     }},

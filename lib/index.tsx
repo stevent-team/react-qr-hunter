@@ -2,14 +2,11 @@ import { useEffect, useRef } from 'react'
 import QrScanner from 'qr-scanner'
 
 type QrHunterOptions = {
-  onDecodeError?: (error: Error | string) => void;
   calculateScanRegion?: (video: HTMLVideoElement) => QrScanner.ScanRegion;
   preferredCamera?: QrScanner.FacingMode | QrScanner.DeviceId;
   maxScansPerSecond?: number;
   highlightScanRegion?: boolean;
   highlightCodeOutline?: boolean;
-  overlay?: HTMLDivElement;
-  returnDetailedScanResult?: true;
 }
 
 type QrHunterProps = {

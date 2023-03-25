@@ -13,18 +13,14 @@
   "repository": "https://github.com/stevent-team/react-qr-hunter",
   "author": "Stevent team (https://stevent.club)",
   "license": "MIT",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "example": "dist-example/index.html",
-  "targets": {
-    "main": {
-      "source": "src/index.js"
-    },
-    "module": {
-      "source": "src/index.js"
-    },
-    "example": {
-      "source": "example/index.html"
+  "type": "module",
+  "main": "dist/react-qr-hunter.umd.cjs",
+  "module": "dist/react-qr-hunter.js",
+  "types": "dist/react-qr-hunter.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/react-qr-hunter.js",
+      "require": "./dist/react-qr-hunter.umd.cjs"
     }
   },
   "scripts": {
@@ -33,17 +29,19 @@
     "build:demo": "tsc && vite build -m demo"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^3.1.0",
-    "qr-scanner": "^1.4.1"
+    "qr-scanner": "^1.4.2"
   },
   "devDependencies": {
+    "@types/node": "^18.15.9",
     "@types/react": "^18.0.29",
     "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.0.2",
     "vite": "^4.2.1",
-    "vite-plugin-dts": "^2.1.0"
+    "vite-plugin-dts": "^2.1.0",
+    "vite-plugin-mkcert": "^1.13.4"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
