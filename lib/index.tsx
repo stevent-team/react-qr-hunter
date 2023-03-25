@@ -1,14 +1,31 @@
 import { useEffect, useRef } from 'react'
 import QrScanner from 'qr-scanner'
 
+type QrHunterOptions = {
+  onDecodeError?: (error: Error | string) => void;
+  calculateScanRegion?: (video: HTMLVideoElement) => QrScanner.ScanRegion;
+  preferredCamera?: QrScanner.FacingMode | QrScanner.DeviceId;
+  maxScansPerSecond?: number;
+  highlightScanRegion?: boolean;
+  highlightCodeOutline?: boolean;
+  overlay?: HTMLDivElement;
+  returnDetailedScanResult?: true;
+}
+
+type QrHunterProps = {
+  onScan: (result: QrScanner.ScanResult) => void,
+  onError?: (error: Error | string) => void,
+  options: QrHunterOptions,
+}
+
 const QrHunter = ({
   onScan,
   onError = () => {},
   options = {},
   ...props
-}) => {
-  const scanner = useRef()
-  const videoRef = useRef()
+}: QrHunterProps) => {
+  const scanner = useRef<QrScanner>()
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     if (videoRef.current && !scanner.current) {

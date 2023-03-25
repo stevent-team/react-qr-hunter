@@ -28,16 +28,22 @@
     }
   },
   "scripts": {
-    "build": "parcel build",
-    "dev": "parcel --target example"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:demo": "tsc && vite build -m demo"
   },
   "dependencies": {
+    "@vitejs/plugin-react": "^3.1.0",
     "qr-scanner": "^1.4.1"
   },
   "devDependencies": {
-    "parcel": "^2.6.2",
+    "@types/react": "^18.0.29",
+    "@types/react-dom": "^18.0.11",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1",
+    "vite-plugin-dts": "^2.1.0"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
