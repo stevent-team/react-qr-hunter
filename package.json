@@ -11,7 +11,7 @@
     "BarcodeDetector"
   ],
   "repository": "https://github.com/stevent-team/react-qr-hunter",
-  "author": "Stevent team (https://stevent.club)",
+  "author": "Stevent Team (https://stevent.club)",
   "license": "MIT",
   "type": "module",
   "main": "dist/react-qr-hunter.umd.cjs",
@@ -33,17 +33,17 @@
     "qr-scanner": "^1.4.2"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.1",
-    "@types/node": "^18.15.9",
-    "@types/react": "^18.0.29",
-    "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^3.1.0",
+    "@changesets/cli": "^2.26.2",
+    "@types/node": "^20.8.4",
+    "@types/react": "^18.2.27",
+    "@types/react-dom": "^18.2.12",
+    "@vitejs/plugin-react": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^5.0.2",
-    "vite": "^4.2.1",
-    "vite-plugin-dts": "^2.1.0",
-    "vite-plugin-mkcert": "^1.13.4"
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11",
+    "vite-plugin-dts": "^3.6.0",
+    "vite-plugin-mkcert": "^1.16.0"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
