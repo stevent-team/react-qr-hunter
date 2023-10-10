@@ -11,19 +11,32 @@ export default defineConfig(({ mode }) => ({
     react(),
     dts({
       insertTypesEntry: true,
+      include: 'lib/**',
     }),
     ...(useHttps ? [mkcert()] : []),
   ],
   resolve: {
     alias: {
-      'react-qr-hunter': resolve(__dirname, '/lib/index.tsx')
+      '@stevent-team/react-qr-hunter': resolve(__dirname, '/lib/index.tsx')
     }
   },
   build: {
-    ...mode !== 'demo' && { lib: {
-      entry: resolve(__dirname, 'lib/index.tsx'),
-      name: 'reactQrHunter',
-      fileName: 'react-qr-hunter',
-    }},
+    ...mode !== 'demo' && {
+      lib: {
+        entry: resolve(__dirname, 'lib/index.tsx'),
+        name: 'react-qr-hunter',
+        fileName: 'react-qr-hunter',
+      },
+      rollupOptions: {
+        external: ['react', 'react-dom', 'react/jsx-runtime'],
+        output: {
+          globals: {
+            react: 'React',
+            'react-dom': 'ReactDOM',
+            'react/jsx-runtime': 'react/jsx-runtime',
+          },
+        },
+      },
+    },
   }
 }))

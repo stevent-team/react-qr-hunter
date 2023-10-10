@@ -11,7 +11,7 @@
     "BarcodeDetector"
   ],
   "repository": "https://github.com/stevent-team/react-qr-hunter",
-  "author": "Stevent team (https://stevent.club)",
+  "author": "Stevent Team (https://stevent.club)",
   "license": "MIT",
   "type": "module",
   "main": "dist/react-qr-hunter.umd.cjs",
