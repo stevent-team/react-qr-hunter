@@ -1,5 +1,12 @@
 # @stevent-team/react-qr-hunter
 
+## 0.0.4
+
+### Patch Changes
+
+- e983a7a: Update dependencies
+- 70fec88: Remove react from bundle
+
 ## 0.0.3
 
 ### Patch Changes
